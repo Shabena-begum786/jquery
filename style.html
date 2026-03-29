@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>jQuery Style Manipulation</title> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<link rel="stylesheet" href="styles.css">
+</head> 
+<body> 
+<nav>Navigation Bar</nav> 
+<br> 
+<h3>jQuery Style Demo</h3> 
+<p class="style-demo">Click to change my style!</p> 
+<button id="style-btn">Apply Style</button> 
+<button id="remove-style">Remove Style</button> 
+<script src="script.js"></script> 
+<script> 
+$("#style-btn").click(function() { 
+  $(".style-demo").css({ 
+    "font-size": "24px", 
+    "color": "blue", 
+    "font-weight": "bold", 
+    "text-shadow": "2px 2px 4px rgba(0,0,0,0.5)" 
+  }); 
+}); 
+$("#remove-style").click(function() { 
+  $(".style-demo").removeAttr("style"); 
+}); 
+</script> 
+</body> 
+</html>

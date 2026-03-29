@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>jQuery Events</title> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<link rel="stylesheet" href="styles.css">
+</head> 
+<body> 
+<nav>Navigation Bar</nav> 
+<br> 
+<h3>jQuery Events Demo</h3> 
+<button id="toggle-btn">Toggle Color</button> 
+<button id="reset-btn">Reset</button> 
+<div id="toggle-div" style="width:100px; height:100px; background-color:gray; margin:10px;"></div> 
+<input type="text" placeholder="Focus me" id="focus-input"> 
+<script src="script.js"></script> 
+<script> 
+$("#toggle-btn").click(function() { 
+  $("#toggle-div").css("background-color", function() { 
+    return $(this).css("background-color") === "rgb(255, 0, 0)" ? "rgb(0, 0, 255)" : "rgb(255, 0, 0)"; 
+  }); 
+}); 
+$("#reset-btn").click(function() {
+  $("#toggle-div").fadeOut(300).fadeIn(300).css("background-color", "grey"); 
+}); 
+$("input").focus(function() { 
+  $(this).css({"border": "2px solid green", "background-color": "#f0f8ff"}); 
+}).blur(function() { 
+  if (!$(this).val().match(/^[a-zA-Z]+$/)) { 
+    $(this).effect("shake", {times:3, distance:10}, 200); 
+  } else { 
+    $(this).css({"border": "", "background-color": ""}); 
+  }
+}); 
+</script> 
+</body> 
+</html>

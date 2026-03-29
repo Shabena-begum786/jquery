@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>jQuery Attributes</title> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<link rel="stylesheet" href="styles.css">
+</head> 
+<body> 
+<nav>Navigation Bar</nav> 
+<br> 
+<h3>jQuery Attributes Demo</h3> 
+<img src="https://media.istockphoto.com/id/1076840920/vector/music-background.jpg?s=612x612&w=0&k=20&c=bMG2SEUYaurIHAjtRbw7bmjLsXyT7iJUvAM5HjL3G3I=" alt="Music image" id="attr-img" width="200"> 
+<button id="attr-btn">Change Attributes</button> 
+<p id="attr-status"></p> 
+<script src="script.js"></script> 
+<script> 
+$("#attr-btn").click(function() { 
+  let newSrc = "https://media.istockphoto.com/id/1147549321/vector/guitar.jpg?s=612x612&w=0&k=20&c=GejFbnGZty9uD4I7RaU_S3O0c9CEdpP9pJ6TK2LpBHg="; 
+  $("#attr-img").attr("src", newSrc).attr("alt", "Guitar image").attr("width", 250); 
+  $("#attr-status").text("Attributes changed!"); 
+}); 
+</script> 
+</body> 
+</html>

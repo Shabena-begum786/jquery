@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>jQuery Traversing</title> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<link rel="stylesheet" href="styles.css">
+</head> 
+<body> 
+<nav>Navigation Bar</nav> 
+<br> 
+<h3>jQuery Traversing Demo</h3> 
+<ul id="parent-list"> 
+  <li class="child">Child 1 
+    <ul> 
+      <li>Grandchild 1</li> 
+      <li>Grandchild 2</li> 
+    </ul> 
+  </li> 
+  <li class="child">Child 2</li> 
+</ul> 
+<button id="traverse-btn">Traverse DOM</button> 
+<p id="traverse-result"></p> 
+<script src="script.js"></script> 
+<script> 
+$("#traverse-btn").click(function() { 
+  let children = $(".child").length; 
+  let siblings = $("#parent-list li").siblings().length; 
+  let parentText = $(".child:first").parent().text(); 
+  let next = $(".child:first").next().text(); 
+  $("#traverse-result").html( 
+    "<strong>Children:</strong> " + children + "<br>" + 
+    "<strong>Siblings:</strong> " + siblings + "<br>" + 
+    "<strong>Parent text:</strong> " + parentText + "<br>" + 
+    "<strong>Next sibling:</strong> " + next 
+  ); 
+  $(".child").css("background-color", "yellow"); 
+}); 
+</script> 
+</body> 
+</html>

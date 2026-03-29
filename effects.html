@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>jQuery Effects & Animations</title> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<link rel="stylesheet" href="styles.css">
+</head> 
+<body> 
+<nav>Navigation Bar</nav> 
+<br> 
+<h3>jQuery Effects Demo</h3> 
+<button id="fade-btn">Fade Toggle</button> 
+<button id="slide-btn">Slide Toggle</button> 
+<button id="animate-btn">Custom Animate</button> 
+<div id="effect-box" style="width:200px; height:200px; background:lightblue; margin:20px;">Effect Box</div> 
+<button id="type-btn">Start Typing</button> 
+<p id="typing"></p> 
+<button id="progress-btn">Start Progress</button> 
+<div class="progress-bar" id="progress"><span id="progress-text">0%</span></div> 
+<div class="animate-on-scroll">Scroll to see effect</div> 
+<script src="script.js"></script> 
+<script> 
+$("#fade-btn").click(function() { 
+  $("#effect-box").fadeToggle("slow"); 
+}); 
+$("#slide-btn").click(function() { 
+  $("#effect-box").slideToggle("slow"); 
+}); 
+$("#animate-btn").click(function() { 
+  $("#effect-box").animate({ 
+    width: "400px", 
+    height: "400px", 
+    opacity: 0.5 
+  }, 1000).animate({ 
+    width: "200px", 
+    height: "200px", 
+    opacity: 1 
+  }, 1000); 
+}); 
+$("#type-btn").click(function() { 
+  let text = "jQuery typing effect demo!"; 
+  let i = 0; 
+  $("#typing").text(""); 
+  function type() { 
+    if (i < text.length) { 
+      $("#typing").append(text[i]); 
+      i++; 
+      setTimeout(type, 100); 
+    } 
+  } 
+  type(); 
+}); 
+$("#progress-btn").click(function() { 
+  $("#progress").animate({width: "100%"}, 3000, function() { 
+    $("#progress-text").text("100% Complete!"); 
+  }); 
+}); 
+</script> 
+</body> 
+</html>

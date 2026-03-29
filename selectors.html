@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>jQuery Selectors</title> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<link rel="stylesheet" href="styles.css">
+</head> 
+<body> 
+<nav>Navigation Bar</nav> 
+<br> 
+<h3>jQuery Selectors Demo</h3> 
+<p id="demo-p">This is a demo paragraph with class "demo".</p> 
+<p class="demo">Another paragraph with class selector.</p> 
+<button id="selector-btn">Select and Style</button> 
+<script src="script.js"></script> 
+<script> 
+$("#selector-btn").click(function() { 
+  $("p.demo").css("color", "red"); 
+  $("#demo-p").html("Selected by ID!"); 
+}); 
+</script> 
+</body> 
+</html>
